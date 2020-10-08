@@ -2,14 +2,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // To get the root element from the HTML document
-import asabenehImage from './images/asabeneh.jpg'
+// import asabenehImage from './images/asabeneh.jpg'
 
 // to import the doSomeMath from the math.js with or without extension
 import doSomeMath from './math.js'
-
+import Card from './card'
+import Subscribe from './subscribe'
 // to import the other modules
 // since these modules were not exported as default we have to desctructure
-import { addTwo, multiply, subtract } from './math.js'
+import { addTwo} from './math.js'
 
 import * as everything from './math.js'
 console.log(addTwo(5, 5))
@@ -64,11 +65,11 @@ const personAge = (
 
 // JSX element, main
 const techs = ['HTML', 'CSS', 'JavaScript']
-const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
 
 const user = (
   <div>
-    <img src={asabenehImage} alt='asabeneh image' />
+    {/* <img src={asabenehImage} alt='asabeneh' /> */}
   </div>
 )
 
@@ -105,9 +106,8 @@ const footer = (
 // JSX element, app
 const app = (
   <div className='app'>
-    {header}
-    {main}
-    {footer}
+    <Card/>
+    <Subscribe/>
   </div>
 )
 
